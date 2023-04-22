@@ -14,7 +14,7 @@
 * Audio is contained within the Batch file (closing it stops the audio)
 * Does not get slower with more tracks
 * No external exes, contained within a single batch file
-* Works out-of-the-box with Windows 2000 and up
+* Works out-of-the-box with Windows 2000 (on NTFS file system) and up
 
 ## Usage
 
@@ -27,4 +27,4 @@
 
 
 ## How does it work?
-**parsnip** uses WMPlayer
+**parsnip** uses the Windows Media Player object to manipulate audio from embedded VBScript. Embedding VBScript in Batch script is detailed [here](https://www.dostips.com/forum/viewtopic.php?p=33963#p33963) - the gist is that we can call CSCRIPT on the batch file itself (interpreting as a WSF file) to run scripts, which, in our case, is a single audio script. Embedding this way brings lots of benefits, such as working out-of-the-box and also having the audio contained in the Batch file process. Once we create a process, then we communicate using alternate data streams (ADS, only on NTFS file systems).This way, we can start a new VBScript process for each audio, and associate it with a particular data stream, meaning it's all asynchronous, so performance does not slow down with more tracks.
