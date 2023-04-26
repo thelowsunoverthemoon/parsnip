@@ -6,6 +6,26 @@
 
 ## Macros
 
+Note : all macros accept variables. For example, 
+
+```
+%PARSNIP_PLAY_NUM: # = var, @ = 2%
+```
+
+works, as well as 
+
+```
+%PARSNIP_PLAY_NUM: # = var, @ = num%
+```
+
+and even math statements (it's a SET /A behind the scenes)
+
+```
+%PARSNIP_PLAY_NUM: # = var, @ = num + 2%
+```
+
+---
+
 ```Batch
 %PARSNIP_MAKE% var name num vol
 ```
