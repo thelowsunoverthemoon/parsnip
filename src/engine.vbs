@@ -22,8 +22,8 @@ adjStr = 0
 adjLen = 0
 secElapse = 0
 numPlay = 0
-Do whileSound.playState = 3 Or Sound.playState = 2 Or Sound.playState = 10 Or numPlay =  - 1
-    If Sound.playState = 1 And numPlay =  - 1 Then
+Do whileSound.playState = 3 Or Sound.playState = 2 Or Sound.playState = 10 Or numPlay = -1
+    If Sound.playState = 1 And numPlay = -1 Then
         Sound.settings.setMode "loop", True
         numPlay = 0
         Sound.controls.play
@@ -43,7 +43,7 @@ Do whileSound.playState = 3 Or Sound.playState = 2 Or Sound.playState = 10 Or nu
         x = Replace(x, vbCrLf, "")
         
         check = Split(x, " ")
-        If UBound(check) <> - 1 Then
+        If UBound(check) <> -1 Then
             If check(0) <> "R" Then
                 If check(0) = "P" Then
                     Sound.controls.play
@@ -59,7 +59,7 @@ Do whileSound.playState = 3 Or Sound.playState = 2 Or Sound.playState = 10 Or nu
                     adjLen = check(2)
                 ElseIf check(0) = "T" Then
                     Sound.controls.play
-                    numPlay =  - 1
+                    numPlay = -1
                     Sound.settings.setMode "loop", False
                     Sound.settings.playCount = check(1)
                 ElseIf check(0) = "K" Then
@@ -77,11 +77,8 @@ Do whileSound.playState = 3 Or Sound.playState = 2 Or Sound.playState = 10 Or nu
                 ElseIf check(0) = "V" Then
                     Sound.settings.volume = check(1)
                 End If
-                
-                
             End If
         End If
-        
     Next
   
     WScript.sleep 200
