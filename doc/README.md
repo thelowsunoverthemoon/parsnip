@@ -30,7 +30,7 @@ and even math statements (it's a SET /A behind the scenes)
 %PARSNIP_MAKE% var name num vol
 ```
 
-Creates a music object that will be used to manipulate audio
+Creates a music object that will be used to manipulate audio. Do **NOT** use this inside a game loop. Create the object before hand and play as needed inside the loop.
 
 * **var** variable name that will "store" the object
 * **name** path to audio file
