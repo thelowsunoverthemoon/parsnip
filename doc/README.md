@@ -44,16 +44,16 @@ Creates a music object that will be used to manipulate audio
 ```
 Plays audio
 
-* **var** variable name that will "store" the object
+* **var** variable name
 
 ---
 
 ```Batch
 %PARSNIP_PLAY_NUM: # = var, @ = num%
 ```
-Plays audio specified times. Only for looping audio. Good for sounds in game loops (create one object and play num each time needed)
+Plays audio specified times. ONLY for **looping** audio (```num``` parameter in ```%PARSNIP_MAKE%```). Good for sounds in game loops (create one object with loop and play num each time needed)
 
-* **var** variable name stores the object
+* **var** variable name
 * **num** number of times to play
 
 ---
@@ -63,7 +63,7 @@ Plays audio specified times. Only for looping audio. Good for sounds in game loo
 ```
 Pauses audio
 
-* **var** variable name that stores the object
+* **var** variable name
 
 ---
 
@@ -71,8 +71,9 @@ Pauses audio
 %PARSNIP_STOP: # = var%
 ```
 
-Stops audio, meaning audio process is stopped. Do this when you no longer need music and if you want to exit the batch file.
-* **var** variable name stores the object
+Stops audio, meaning audio process is stopped. Do this when you no longer need that specific audio. You MUST stop all audio when you want to programmatically exit the batch file (since they're all separate threads).
+
+* **var** variable name
 
 ---
 
@@ -82,9 +83,9 @@ Stops audio, meaning audio process is stopped. Do this when you no longer need m
 
 Sets volume.
 
-* **var** variable name stores the object
+* **var** variable name
 * **vol** volume
-* 
+
 ---
 
 ```Batch
@@ -93,7 +94,7 @@ Sets volume.
 
 Crescendos the volume
 
-* **var** variable name stores the object
+* **var** variable name
 * **str** how much to increase each second
 * **len** for how long in second
 
@@ -104,7 +105,7 @@ Crescendos the volume
 ```
 Decrescendos the volume.
 
-* **var** variable name stores the object
+* **var** variable name
 * **str** how much to decrease each second
 * **len** for how long in second
 
@@ -115,7 +116,7 @@ Decrescendos the volume.
 ```
 Skips audio.
 
-* **var** variable name stores the object
+* **var** variable name
 * **num** how many seconds to skip
 
 ---
